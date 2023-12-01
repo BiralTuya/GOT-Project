@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-6">
+                <h3>Quotes</h3>
+            </div>
+            <div class="col-6 btn-quote">
+                <button class="btn btn-primary" (click)="getQuotes()">Get Random Quote</button>
+            </div>
+        </div>
+    </div>
+    <div class="list-group">
+        <div *ngFor="let quote of quotes">
+            <li class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{quote.sentence}}</h5>
+                </div>
+                <p class="mb-1">{{quote.character.name}}</p>
+            </li>
+        </div>
+    </div>
+</div>
