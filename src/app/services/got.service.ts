@@ -19,4 +19,12 @@ export class GotService {
   getPeople() {
     return this.http.get(`${this.apiUrl}characters`);
   }
+
+  getPeoplebyName(name: string) {
+    return this.http.get(`${this.apiUrl}character/${name}`);
+  }
+
+  getHousebyName(name: string) {
+    return this.http.get(`${this.apiUrl}house/${name}`);
+  }
 }

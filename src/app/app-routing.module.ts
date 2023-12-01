@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HousesComponent } from './houses/houses.component';
-import { PeoplesComponent } from './peoples/peoples.component';
-import { QuotesComponent } from './quotes/quotes.component';
-import { HeaderComponent } from './header/header.component';
-import { ContentComponent } from './content/content.component';
+import { HousesComponent } from './pages/houses/houses.component';
+import { PeoplesComponent } from './pages/peoples/peoples.component';
+import { QuotesComponent } from './pages/quotes/quotes.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { ContentComponent } from './layout/content/content.component';
+import { PeoplesDetailComponent } from './pages/peoples/peoples-detail/peoples-detail.component';
+import { HouseMemberComponent } from './pages/houses/house-member/house-member.component';
 
 const routes: Routes = [
   // { path: 'quotes/:id', component: QuotesComponent },
   { path: 'houses', component: HousesComponent },
   { path: 'peoples', component: PeoplesComponent },
   { path: 'quotes', component: QuotesComponent },
-  { path: 'header', component: HeaderComponent },
-  { path: 'content', component: ContentComponent },
+  { path: 'house/:slug', component: HouseMemberComponent },
+  { path: 'people/:slug', component: PeoplesDetailComponent },
   { path: '', redirectTo: '/houses', pathMatch: 'full' }, // Default route
 ];
 

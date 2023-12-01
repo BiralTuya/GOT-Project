@@ -9,7 +9,8 @@
 <div class="card mt-4">
     <div class="list-group">
         <div *ngFor="let house of houses">
-            <a href="#" class="list-group-item list-group-item-action list-group-item-primary">{{house.name}}</a>
+            <button [routerLink]="['/house', house.slug]"
+                 class="list-group-item list-group-item-action list-group-item-primary">{{house.name}}</button>
         </div>
     </div>
 </div>

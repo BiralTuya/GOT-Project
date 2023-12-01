@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GotService } from '../services/got.service';
 import { ActivatedRoute } from '@angular/router';
+import { GotService } from '../../services/got.service';
 
 @Component({
   selector: 'app-peoples',

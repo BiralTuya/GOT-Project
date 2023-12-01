@@ -4,13 +4,13 @@
     <div class="col-12">
         <ul ngbNav #nav="ngbNav" class="nav-pills">
             <li ngbNavItem>
-                <button ngbNavLink routerLink="houses" >Houses</button>
+                <a ngbNavLink routerLink="houses" routerLinkActive="houses" >Houses</a>
             </li>
             <li ngbNavItem>
-                <button ngbNavLink routerLink="peoples">Peoples</button>
+                <a ngbNavLink routerLink="peoples" routerLinkActive="peoples">Peoples</a>
             </li>
             <li ngbNavItem>
-                <button ngbNavLink routerLink="quotes">Quotes</button>
+                <a ngbNavLink routerLink="quotes" routerLinkActive="quotes">Quotes</a>
             </li>
         </ul>
         <div [ngbNavOutlet]="nav"></div>
