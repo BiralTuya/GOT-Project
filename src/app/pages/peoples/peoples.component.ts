@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GotService } from '../../services/got.service';
 
@@ -17,19 +17,16 @@ export class PeoplesComponent {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  ngOnInit() {
-    console.log(this.activatedRoute.snapshot.params);
-    this.gotService.getPeople().subscribe((data: any) => {
-      console.log(data);
-      this.peoples = data;
-    });
-  }
   getPeople() {
     this.gotService.getPeople().subscribe((data: any) => {
-      console.log(data);
       this.peoples = data;
     });
   }
+
+  ngOnInit() {
+    this.getPeople();
+  }
+
   filterPeople() {
     this.filteredPeoples = this.peoples.filter((people: any) => {
       return people.name.toLowerCase().includes(this.searchName.toLowerCase());

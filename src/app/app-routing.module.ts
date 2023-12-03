@@ -4,13 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HousesComponent } from './pages/houses/houses.component';
 import { PeoplesComponent } from './pages/peoples/peoples.component';
 import { QuotesComponent } from './pages/quotes/quotes.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { ContentComponent } from './layout/content/content.component';
 import { PeoplesDetailComponent } from './pages/peoples/peoples-detail/peoples-detail.component';
 import { HouseMemberComponent } from './pages/houses/house-member/house-member.component';
 
 const routes: Routes = [
-  // { path: 'quotes/:id', component: QuotesComponent },
   { path: 'houses', component: HousesComponent },
   { path: 'peoples', component: PeoplesComponent },
   { path: 'quotes', component: QuotesComponent },

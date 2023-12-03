@@ -12,20 +12,17 @@ export class QuotesComponent implements OnInit {
   constructor(
     private gotService: GotService,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {}
+
+  getQuotes() {
+    this.gotService.getQuotes().subscribe((data: any) => {
+      this.quotes = data;
+    });
+  }
 
   ngOnInit() {
-    console.log(this.activatedRoute.snapshot.params);
-    this.gotService.getQuotes().subscribe((data: any) => {
-      console.log(data);
-      this.quotes = data;
-    });
+    this.getQuotes();
   }
- getQuotes() {
-    this.gotService.getQuotes().subscribe((data: any) => {
-      console.log(data);
-      this.quotes = data;
-    });
-  }
+
 
 }

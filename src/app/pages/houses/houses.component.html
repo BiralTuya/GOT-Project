@@ -1,13 +1,24 @@
 <div class="row">
     <div class="col-12">
-        <input class="form-control" type="text" placeholder="Type to search..." aria-label="Type to search..." [(ngModel)]="searchQuery" (input)="filterHouses()">
+        <input class="form-control" type="text" placeholder="Type to search..." aria-label="Type to search..."
+            [(ngModel)]="searchQuery" (input)="filterHouses()">
     </div>
 </div>
 <div class="card mt-4">
+    <div class="card-header">
+        <h3>Houses</h3>
+    </div>
     <div class="list-group">
-        <div *ngFor="let house of (searchQuery ? filteredHouses : houses)">
-            <button [routerLink]="['/house', house.slug]"
-                 class="list-group-item list-group-item-action list-group-item-primary">{{house.name}}</button>
+        <div *ngIf="houses && houses.length > 0; else noDataWarning">
+            <div *ngFor="let house of (searchQuery ? filteredHouses : houses)">
+                <button [routerLink]="['/house', house.slug]"
+                    class="list-group-item list-group-item-action">{{house.name}}</button>
+            </div>
         </div>
+        <ng-template #noDataWarning>
+            <div class="alert alert-warning" role="alert">
+                No houses found. Please try a different search query.
+            </div>
+        </ng-template>
     </div>
 </div>

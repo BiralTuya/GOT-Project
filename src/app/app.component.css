@@ -1,0 +1,24 @@
+/* styles.css (or your preferred stylesheet) */
+
+body {
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+  }
+  
+  main {
+    overflow: hidden; /* Prevent horizontal scrollbars */
+  }
+  
+  app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Set z-index to ensure the header is above other content */
+  }
+  
+  .scrollable-container {
+    margin-top: 70px; /* Set margin to ensure the content is below the header */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: calc(100vh - 70px); /* Calculate the height of the container */
+  }
+  

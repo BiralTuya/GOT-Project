@@ -10,13 +10,20 @@
         </div>
     </div>
     <div class="list-group">
-        <div *ngFor="let quote of quotes">
-            <li class="list-group-item list-group-item-action" aria-current="true">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{quote.sentence}}</h5>
-                </div>
-                <p class="mb-1">{{quote.character.name}}</p>
-            </li>
+        <div *ngIf="quotes && quotes.length > 0; else noDataWarning">
+            <div *ngFor="let quote of quotes">
+                <li class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{quote.sentence}}</h5>
+                    </div>
+                    <p class="mb-1">{{quote.character.name}}</p>
+                </li>
+            </div>
         </div>
+        <ng-template #noDataWarning>
+            <div class="alert alert-warning" role="alert">
+                No houses found. Please try a different search query.
+            </div>
+        </ng-template>
     </div>
 </div>

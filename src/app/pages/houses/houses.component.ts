@@ -17,19 +17,16 @@ export class HousesComponent {
     private activatedRoute: ActivatedRoute
   ) {}
 
-  ngOnInit() {
-    console.log(this.activatedRoute.snapshot.params);
-    this.gotService.getHouses().subscribe((data: any) => {
-      console.log(data);
-      this.houses = data;
-    });
-  }
   getHouses() {
     this.gotService.getHouses().subscribe((data: any) => {
-      console.log(data);
       this.houses = data;
     });
   }
+
+  ngOnInit() {
+    this.getHouses();
+  }
+ 
   filterHouses() {
     this.filteredHouses = this.houses.filter((house: any) => {
       return house.name.toLowerCase().includes(this.searchQuery.toLowerCase());

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GotService {
   apiUrl = 'https://api.gameofthronesquotes.xyz/v1/';
+  
   constructor(
     private   http: HttpClient
   ) {}

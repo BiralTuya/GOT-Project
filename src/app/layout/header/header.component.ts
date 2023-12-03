@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  // constructor(private ngbNav: NgbNav) {}
 
-  setActiveTab(tabId: string) {
-    // this.ngbNav.activeId = tabId;
-  } 
 }

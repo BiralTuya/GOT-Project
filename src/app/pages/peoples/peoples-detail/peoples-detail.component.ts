@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GotService } from '../../../services/got.service';
 
@@ -18,12 +18,10 @@ export class PeoplesDetailComponent {
     private activatedRoute: ActivatedRoute
   ) {
     this.slug = this.activatedRoute.snapshot.params['slug'];
-    console.log(this.slug)
   }
 
   ngOnInit() {
     this.gotService.getPeoplebyName(this.slug).subscribe((data: any) => {
-      console.log(data);
       this.character = data[0];
       this.newQuote = data[0].quotes[this.num];
     });
