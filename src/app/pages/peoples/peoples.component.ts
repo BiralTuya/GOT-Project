@@ -9,6 +9,9 @@ import { GotService } from '../../services/got.service';
 })
 export class PeoplesComponent {
   peoples : any;
+  searchName: string = '';
+  filteredPeoples: any[] = [];
+
   constructor(
     private gotService: GotService,
     private activatedRoute: ActivatedRoute
@@ -25,6 +28,11 @@ export class PeoplesComponent {
     this.gotService.getPeople().subscribe((data: any) => {
       console.log(data);
       this.peoples = data;
+    });
+  }
+  filterPeople() {
+    this.filteredPeoples = this.peoples.filter((people: any) => {
+      return people.name.toLowerCase().includes(this.searchName.toLowerCase());
     });
   }
 }

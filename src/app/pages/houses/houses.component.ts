@@ -9,6 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HousesComponent {
   houses : any;
+  searchQuery: string = '';
+  filteredHouses: any[] = [];
+
   constructor(
     private gotService: GotService,
     private activatedRoute: ActivatedRoute
@@ -25,6 +28,11 @@ export class HousesComponent {
     this.gotService.getHouses().subscribe((data: any) => {
       console.log(data);
       this.houses = data;
+    });
+  }
+  filterHouses() {
+    this.filteredHouses = this.houses.filter((house: any) => {
+      return house.name.toLowerCase().includes(this.searchQuery.toLowerCase());
     });
   }
 }

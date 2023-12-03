@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HouseMemberComponent } from './pages/houses/house-member/house-member.component';
 import { PeoplesDetailComponent } from './pages/peoples/peoples-detail/peoples-detail.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { PeoplesDetailComponent } from './pages/peoples/peoples-detail/peoples-d
     NgbModule,
     HttpClientModule,
     // RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [
