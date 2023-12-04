@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'quotes', component: QuotesComponent },
   { path: 'house/:slug', component: HouseMemberComponent },
   { path: 'people/:slug', component: PeoplesDetailComponent },
-  { path: '', redirectTo: '/houses', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: 'houses', pathMatch: 'full' },
+  { path: '**', redirectTo: 'houses', pathMatch: "full"} // Default route
 ];
 
 @NgModule({
@@ -26,4 +27,6 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  
+ }

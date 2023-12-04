@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GotService } from '../../../services/got.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-house-member',
@@ -13,13 +14,18 @@ export class HouseMemberComponent {
 
   constructor(
     private gotService: GotService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.slug = this.activatedRoute.snapshot.params['slug'];
   }
 
   ngOnInit() {
     this.gotService.getHousebyName(this.slug).subscribe((data: any) => {
+      if(data.length === 0) {
+        this.router.navigate(['/houses']);
+        return;
+      }
       this.house = data[0];
     });
   }
