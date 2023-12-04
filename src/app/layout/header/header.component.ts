@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 // import { NgbNav } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
 }

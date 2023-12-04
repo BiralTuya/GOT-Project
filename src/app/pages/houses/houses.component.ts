@@ -32,4 +32,9 @@ export class HousesComponent {
       return house.name.toLowerCase().includes(this.searchQuery.toLowerCase());
     });
   }
+
+  clear() {
+    this.searchQuery = '';
+    this.filterHouses();
+  }
 }

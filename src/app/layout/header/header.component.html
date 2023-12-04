@@ -1,16 +1,7 @@
 <div class="row header">
-    <div class="col-12">
-        <ul ngbNav #nav="ngbNav" class="nav-pills">
-            <li ngbNavItem>
-                <a ngbNavLink [routerLink]="['/houses']" routerLinkActive="active" >Houses</a>
-            </li>
-            <li ngbNavItem>
-                <a ngbNavLink [routerLink]="['/peoples']" routerLinkActive="active">Peoples</a>
-            </li>
-            <li ngbNavItem>
-                <a ngbNavLink [routerLink]="['/quotes']" routerLinkActive="active">Quotes</a>
-            </li>
-        </ul>
-        <div [ngbNavOutlet]="nav"></div>
+    <div class="col-12 d-flex gap-4">
+        <button class="btn btn-primary" [routerLink]="['/houses']" routerLinkActive="active">Houses</button>
+        <button class="btn btn-primary" [routerLink]="['/peoples']" routerLinkActive="active">Peoples</button>
+        <button class="btn btn-primary" [routerLink]="['/quotes']" routerLinkActive="active">Quotes</button>
     </div>
 </div>

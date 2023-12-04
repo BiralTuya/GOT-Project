@@ -32,4 +32,9 @@ export class PeoplesComponent {
       return people.name.toLowerCase().includes(this.searchName.toLowerCase());
     });
   }
+
+  clear() {
+    this.searchName = '';
+    this.filteredPeoples = [];
+  }
 }
